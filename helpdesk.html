@@ -26,16 +26,17 @@
     <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
         <fieldset>
             <legend>Student details</legend>
+            <!-- Student ID: 7 to 10 digits -->
             <p>
                 <label for="studentid">Student ID</label>
-                <input type="text" name="studentid" id="studentid" maxlength="10" size="10">
+                <input type="text" name="studentid" id="studentid" maxlength="10" size="10" pattern="\d{7,10}" required="required">
             </p>
-            <!-- Names: at most 15 characters -->
+            <!-- Names: letters only, at most 15 characters -->
             <p>
                 <label for="givenname">Given Name</label>
-                <input type="text" name="givenname" id="givenname" maxlength="15" size="15">
+                <input type="text" name="givenname" id="givenname" maxlength="15" size="15" pattern="[A-Za-z]+" required="required">
                 <label for="familyname">Family Name</label>
-                <input type="text" name="familyname" id="familyname" maxlength="15" size="15">
+                <input type="text" name="familyname" id="familyname" maxlength="15" size="15" pattern="[A-Za-z]+" required="required">
             </p>
         </fieldset>
 
@@ -43,17 +44,17 @@
             <legend>Your unit</legend>
             <!-- The three radio buttons share one name, so only one unit can be chosen -->
             <p>
-                <input type="radio" name="unit" id="cos10011" value="COS10011">
+                <input type="radio" name="unit" id="cos10011" value="COS10011" required="required">
                 <label for="cos10011">COS10011</label>
                 <input type="radio" name="unit" id="cos60004" value="COS60004">
                 <label for="cos60004">COS60004</label>
                 <input type="radio" name="unit" id="cos60007" value="COS60007">
                 <label for="cos60007">COS60007</label>
             </p>
-            <!-- The first option has an empty value -->
+            <!-- The first option has an empty value, so the required select forces a real choice -->
             <p>
                 <label for="tutor">Your Tutor</label>
-                <select name="tutor" id="tutor">
+                <select name="tutor" id="tutor" required="required">
                     <option value="">Please Select</option>
                     <option value="anderson">Emma Anderson</option>
                     <option value="nguyen">Tuan Nguyen</option>
@@ -90,11 +91,11 @@
             <!-- HTML5 date and time inputs -->
             <p>
                 <label for="date">Date</label>
-                <input type="date" name="date" id="date">
+                <input type="date" name="date" id="date" required="required">
             </p>
             <p>
                 <label for="time">Time</label>
-                <input type="time" name="time" id="time">
+                <input type="time" name="time" id="time" required="required">
             </p>
         </fieldset>
 
