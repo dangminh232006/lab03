@@ -15,6 +15,92 @@
 </head>
 
 <body>
+    <!-- The logo links to the Swinburne website -->
+    <a href="http://www.swin.edu.au"><img src="images/logo.png" alt="Swinburne University of Technology logo" width="199" height="100"></a>
+
+    <h1>CWA Help Desk Appointment</h1>
+
+    <p>The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday</p>
+    <p>Check Blackboard for when CWA tutors will be there.</p>
+
+    <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+        <fieldset>
+            <legend>Student details</legend>
+            <p>
+                <label for="studentid">Student ID</label>
+                <input type="text" name="studentid" id="studentid" maxlength="10" size="10">
+            </p>
+            <!-- Names: at most 15 characters -->
+            <p>
+                <label for="givenname">Given Name</label>
+                <input type="text" name="givenname" id="givenname" maxlength="15" size="15">
+                <label for="familyname">Family Name</label>
+                <input type="text" name="familyname" id="familyname" maxlength="15" size="15">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Your unit</legend>
+            <!-- The three radio buttons share one name, so only one unit can be chosen -->
+            <p>
+                <input type="radio" name="unit" id="cos10011" value="COS10011">
+                <label for="cos10011">COS10011</label>
+                <input type="radio" name="unit" id="cos60004" value="COS60004">
+                <label for="cos60004">COS60004</label>
+                <input type="radio" name="unit" id="cos60007" value="COS60007">
+                <label for="cos60007">COS60007</label>
+            </p>
+            <!-- The first option has an empty value -->
+            <p>
+                <label for="tutor">Your Tutor</label>
+                <select name="tutor" id="tutor">
+                    <option value="">Please Select</option>
+                    <option value="anderson">Emma Anderson</option>
+                    <option value="nguyen">Tuan Nguyen</option>
+                    <option value="patel">Priya Patel</option>
+                    <option value="smith">James Smith</option>
+                    <option value="tran">Linh Tran</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Issue</legend>
+            <!-- The checkboxes share the array name issue[], so every ticked value is sent -->
+            <p>
+                <label for="html">HTML</label>
+                <input type="checkbox" name="issue[]" id="html" value="html" checked="checked">
+                <label for="css">CSS</label>
+                <input type="checkbox" name="issue[]" id="css" value="css">
+                <label for="javascript">JavaScript</label>
+                <input type="checkbox" name="issue[]" id="javascript" value="javascript">
+                <label for="php">PHP</label>
+                <input type="checkbox" name="issue[]" id="php" value="php">
+                <label for="mysql">MySQL</label>
+                <input type="checkbox" name="issue[]" id="mysql" value="mysql">
+            </p>
+            <p>
+                <label for="description">Description of Issue</label><br>
+                <textarea name="description" id="description" rows="5" cols="40" placeholder="Write description of your problem here..."></textarea>
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferred Date / Time</legend>
+            <!-- HTML5 date and time inputs -->
+            <p>
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date">
+            </p>
+            <p>
+                <label for="time">Time</label>
+                <input type="time" name="time" id="time">
+            </p>
+        </fieldset>
+
+        <input type="submit" value="Book">
+        <input type="reset" value="Reset form">
+    </form>
 </body>
 
 </html>
