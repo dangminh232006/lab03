@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-    helpdesk.html - appointment booking form for the CWA Help Desk.
-    COS10026 Web Technology Project, Week 03 Lab Exercise: HTML Form.
-    Author: Bui Dang Minh (105716425)
--->
 <html lang="en">
 
 <head>
@@ -15,7 +10,6 @@
 </head>
 
 <body>
-    <!-- The logo links to the Swinburne website -->
     <a href="http://www.swin.edu.au"><img src="images/logo.png" alt="Swinburne University of Technology logo" width="199" height="100"></a>
 
     <h1>CWA Help Desk Appointment</h1>
@@ -26,12 +20,10 @@
     <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
         <fieldset>
             <legend>Student details</legend>
-            <!-- Student ID: 7 to 10 digits -->
             <p>
                 <label for="studentid">Student ID</label>
                 <input type="text" name="studentid" id="studentid" maxlength="10" size="10" pattern="\d{7,10}" required="required">
             </p>
-            <!-- Names: letters only, at most 15 characters -->
             <p>
                 <label for="givenname">Given Name</label>
                 <input type="text" name="givenname" id="givenname" maxlength="15" size="15" pattern="[A-Za-z]+" required="required">
@@ -42,7 +34,6 @@
 
         <fieldset>
             <legend>Your unit</legend>
-            <!-- The three radio buttons share one name, so only one unit can be chosen -->
             <p>
                 <input type="radio" name="unit" id="cos10011" value="COS10011" required="required">
                 <label for="cos10011">COS10011</label>
@@ -51,7 +42,6 @@
                 <input type="radio" name="unit" id="cos60007" value="COS60007">
                 <label for="cos60007">COS60007</label>
             </p>
-            <!-- The first option has an empty value, so the required select forces a real choice -->
             <p>
                 <label for="tutor">Your Tutor</label>
                 <select name="tutor" id="tutor" required="required">
@@ -67,7 +57,6 @@
 
         <fieldset>
             <legend>Issue</legend>
-            <!-- The checkboxes share the array name issue[], so every ticked value is sent -->
             <p>
                 <label for="html">HTML</label>
                 <input type="checkbox" name="issue[]" id="html" value="html" checked="checked">
@@ -88,7 +77,6 @@
 
         <fieldset>
             <legend>Preferred Date / Time</legend>
-            <!-- Text inputs with patterns that match the placeholders -->
             <p>
                 <label for="date">Date</label>
                 <input type="text" name="date" id="date" maxlength="10" size="10" placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}" required="required">
